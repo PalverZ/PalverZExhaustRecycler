@@ -1,5 +1,5 @@
 PalverZ Exhaust Recyclers
-A part to make the engine attached below it produce a small amount of mono propellant, look for 
+A part to make the (Liquid Fuel and Oxidizer) engine attached below it produce a small amount of mono propellant, look for 
 the part under utilities, after researching fuel systems. Inspired by RoverDudes work with Karbonite Engines
 
 License:
