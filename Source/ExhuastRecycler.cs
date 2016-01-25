@@ -20,11 +20,12 @@ namespace PalverZ.Recycler
     public class ModuleExhaustRecycler :PartModule
     {
         private Part childPart;
+        private double thrustMultiplier = 1;
         //TODO Make this able to handel a list for multiple by products?!?!?!?
         [KSPField]
         public string resourceName = "MonoPropellant";
         [KSPField]
-        public double resourceRate = 1.5;
+        public double resourceRate = 1;
         
         
         public override void OnStart(StartState state)
@@ -45,10 +46,10 @@ namespace PalverZ.Recycler
             ModuleResource outPutRes = new ModuleResource();
             outPutRes.name = resourceName;
             outPutRes.id = PartResourceLibrary.Instance.GetDefinition(resourceName).id; //Do I need this
-            outPutRes.rate = resourceRate;
+            outPutRes.rate = resourceRate*thrustMultiplier;
 
             newModule.outputResources.Add(outPutRes);
-
+            print("PZER: Capture added with a real rate of " + resourceRate * thrustMultiplier);
 
 
 
@@ -65,6 +66,7 @@ namespace PalverZ.Recycler
                     ModuleEngines engine = module as ModuleEngines;
                     if (engine.engineType == EngineType.LiquidFuel)
                         print("PZER: Attached to LFO engine");
+                        thrustMultiplier = engine.maxThrust / 215; //use the maxrate of the LV-T30
                         return true;
                 }
             

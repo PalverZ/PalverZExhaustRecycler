@@ -5,6 +5,11 @@ the part under utilities, after researching fuel systems. Inspired by RoverDudes
 License:
 CC-BY-NC-SA 4.0
 
+ChangeLog: 
+
+V 0.3.5.0
+So exhaust collection rate now depends on the engines thrust as well as the rate using the max thrust of 
+the LV-T30 or 215.  configRate*(engineMaxThrust/215).
 
 V 0.3.1.0
 Output resource and rate is now configurable defaults to monoprop and 1.5 if those fields are left blank
@@ -24,4 +29,5 @@ TODO:
 - Tidy up code
 - Make [More] configurable
 - Get a real Mesh and texture
+- More Parts and sizes (Help welcomed)
 - Other stuff?
