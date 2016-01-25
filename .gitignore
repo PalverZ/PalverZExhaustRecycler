@@ -1,4 +1,7 @@
 *.zip
+*.netkan
+netkan.exe 
+*.ckan
 
 # Windows image file caches
 Thumbs.db
