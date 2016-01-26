@@ -30,9 +30,20 @@ namespace PalverZ.Recycler
         
         public override void OnStart(StartState state)
         {
-            childPart = part.FindChildParts<Part>()[0]; //Finds first child later Ill look at all direct children (for radial engine support)
-            if (PartHasModule(childPart))
-                AttachCollector(childPart);
+            List<Part> children = part.FindChildParts<Part>().ToList<Part>();
+            
+            if (children == null || children.Count == 0)
+                return; //Simple little way to avoid problems I hope 
+
+            foreach (Part cp in children) 
+            {
+                print("PZER: Child " + cp.name);
+                if (PartHasModule(cp))
+                    AttachCollector(cp);
+            }
+
+            //childPart = part.FindChildParts<Part>()[0]; //Finds first child later Ill look at all direct children (for radial engine support)
+            
                       
            
              
@@ -42,10 +53,10 @@ namespace PalverZ.Recycler
             toPart.AddModule("ModuleExhaustCapture");
 
             ModuleExhaustCapture newModule = toPart.FindModuleImplementing<ModuleExhaustCapture>();
-
             ModuleResource outPutRes = new ModuleResource();
+            
             outPutRes.name = resourceName;
-            outPutRes.id = PartResourceLibrary.Instance.GetDefinition(resourceName).id; //Do I need this
+            outPutRes.id = PartResourceLibrary.Instance.GetDefinition(resourceName).id; //Do I need this       
             outPutRes.rate = resourceRate*thrustMultiplier;
 
             newModule.outputResources.Add(outPutRes);
