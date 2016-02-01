@@ -1,11 +1,21 @@
 PalverZ Exhaust Recyclers
-A part to make the (Liquid Fuel and Oxidizer) engine attached below it produce a small amount of mono propellant, look for 
-the part under utilities, after researching fuel systems. Inspired by RoverDudes work with Karbonite Engines
+Parts to make the engine attached below it produce a small amount of mono propellant, look for 
+the parts under utilities, after researching fuel systems.
 
 License:
 CC-BY-NC-SA 4.0
 
 ChangeLog: 
+
+
+
+V 0.5.0:
+- Mechanics only update more parts will come next V (I hope)
+- Delete old installs before this one just in case (but should be save safe)
+- Secondary resource now a thing defualt is none
+- Heat productions of engines is now increased by a cerain precentage this amount is defined in the config, it is not huge.
+- Engine types can be defined in the config, right now will only work with one kind, in order to use on multiple types create another module in the config, (for now)
+	
 
 V 0.4.0
  **May break saves**: sorry if it does I will do this as few times as possible, should only break ships if anything.
