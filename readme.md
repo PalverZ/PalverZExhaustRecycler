@@ -8,6 +8,8 @@ CC-BY-NC-SA 4.0
 ChangeLog: 
 
 
+V 0.6.0:
+- New Part 2.5M Radial/Inline Collector
 
 V 0.5.0:
 - Mechanics only update more parts will come next V (I hope)
